@@ -50,8 +50,8 @@ const CompoundInterestFormula = () => {
                 <FormField
                     component={TextInput}
                     name='duration'
-                    label='Термін'
-                    placeholder='Термін'
+                    label='Термін (у роках)'
+                    placeholder='Термін (у роках)'
                     type='text'
                     color='gray-light'
                     control={control}

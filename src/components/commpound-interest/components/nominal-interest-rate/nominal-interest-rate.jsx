@@ -1,11 +1,13 @@
 import { useForm } from 'react-hook-form';
-import { Button, TextInput, FormField } from 'components/common';
+import { Button, TextInput, FormField, DatePicker } from 'components/common';
+import { getDatesDifferenceInMonths } from 'helpers';
 
 import styles from 'components/form-styles.module.scss';
 
 const DEFAULT_VALUES = {
     loan: 100000,
-    durationInMonths: 31,
+    startDate: new Date('04/24/2019'),
+    endDate: new Date('11/25/2021'),
     percentages: 22,
     numberOfCompounding: 4, // кількість нарахувань у році
     result: '',
@@ -18,8 +20,10 @@ const NominalInterestRate = () => {
     });
 
     const calculateNominalInterestRate = form => {
-        const { loan: P, percentages: j, durationInMonths: n, numberOfCompounding: m  } = form;
+        const { loan: P, percentages: j, numberOfCompounding: m, startDate, endDate } = form;
 
+        const n = getDatesDifferenceInMonths(startDate, endDate); // термін у місяцях
+        console.log(n);
         const periods = n / (12 / m);
 
         const S = P * (1 + (j / 100) / m)**periods;
@@ -41,7 +45,7 @@ const NominalInterestRate = () => {
             onSubmit={handleSubmit(calculateNominalInterestRate)}
             className={styles.formulaForm}
         >
-            <h2 className={styles.title}>Математичне дисконтування</h2>
+            <h2 className={styles.title}>Номінальна відсоткова ставка</h2>
 
             <div className={styles.inputBlock}>
                 <FormField
@@ -67,16 +71,26 @@ const NominalInterestRate = () => {
                 />
             </div>
 
-            <div className={styles.inputBlock}>
-                <FormField
-                    component={TextInput}
-                    name='durationInMonths'
-                    label='Тривалість договору (у місяцях)'
-                    placeholder='Тривалість договору (у місяцях)'
-                    type='text'
-                    color='gray-light'
-                    control={control}
-                />
+            <div className={styles.inlineBlock}>
+                <div className={styles.inlineElement}>
+                    <FormField
+                        component={DatePicker}
+                        name='startDate'
+                        label='Початок'
+                        placeholder='Початок'
+                        control={control}
+                    />
+                </div>
+
+                <div className={styles.inlineElement}>
+                    <FormField
+                        component={DatePicker}
+                        name='endDate'
+                        label='Кінець'
+                        placeholder='Кінець'
+                        control={control}
+                    />
+                </div>
             </div>
 
             <div className={styles.inputBlock}>
