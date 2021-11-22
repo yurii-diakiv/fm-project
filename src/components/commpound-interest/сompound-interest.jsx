@@ -4,15 +4,17 @@ import {
     CompoundInterestFormula,
     CompoundInterestFormulaPeriods,
     CompoundInterestHybridMethod,
-    NominalInterestRate
+    NominalInterestRate,
+    RealInterestRate
 } from './components';
 
 const CompoundInterest = () => {
     const options = [
-        { value: 'compoundInterestFormula', label: '2.0. Формула складних відсотків' },
-        { value: 'compoundInterestFormulaPeriods', label: '2.0.1. Формула складних відсотків (різні періоди + маржа)' },
-        { value: 'compoundInterestHybridMethod', label: '2.0.2 Змішаний метод vs Простий метод' },
-        { value: 'nominalInterestRate', label: '2.2. Номінальна відсоткова ставка' }
+        { value: 'compoundInterestFormula', label: '1. Формула складних відсотків' },
+        { value: 'compoundInterestFormulaPeriods', label: '2. Формула складних відсотків (різні періоди + маржа)' },
+        { value: 'compoundInterestHybridMethod', label: '3. Змішаний метод vs Простий метод' },
+        { value: 'nominalInterestRate', label: '4. Номінальна відсоткова ставка' },
+        { value: 'realInterestRate', label: '5. Реальна відсоткова ставка' }
     ];
 
     const [selectedOption, setSelectedOption] = useState(options[0]);
@@ -30,6 +32,8 @@ const CompoundInterest = () => {
                 return <CompoundInterestHybridMethod />;
             case 'nominalInterestRate':
                 return <NominalInterestRate />;
+            case 'realInterestRate':
+                return <RealInterestRate />;
             default:
                 return;
         }
