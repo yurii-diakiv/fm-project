@@ -19,7 +19,7 @@ const CompoundInterestFormulaPeriods = () => {
         defaultValues: DEFAULT_VALUES,
     });
 
-    const calculateSimplePercentages = form => {
+    const calculateCompoundInterestPeriods = form => {
         const { loan: P, percentages: i, periods } = form;
 
         let accumulator = 1;
@@ -35,7 +35,7 @@ const CompoundInterestFormulaPeriods = () => {
 
     return (
         <form
-            onSubmit={handleSubmit(calculateSimplePercentages)}
+            onSubmit={handleSubmit(calculateCompoundInterestPeriods)}
             className={styles.formulaForm}
         >
             <h2 className={styles.title}>Формула складних відсотків (різні періоди + маржа)</h2>

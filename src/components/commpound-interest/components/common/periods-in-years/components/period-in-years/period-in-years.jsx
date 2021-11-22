@@ -23,7 +23,7 @@ const PeriodInYears = ({ index, control, remove }) => {
             </div>
 
             <div className={styles.inlineElement}>
-            <FormField
+                <FormField
                     component={TextInput}
                     name={`periods.${index}.margin`}
                     label='Маржа'

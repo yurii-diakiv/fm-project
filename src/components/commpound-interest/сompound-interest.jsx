@@ -2,14 +2,15 @@ import React, { useState } from 'react';
 import { Select } from 'components/common';
 import {
     CompoundInterestFormula,
-    CompoundInterestFormulaPeriods
+    CompoundInterestFormulaPeriods,
+    CompoundInterestHybridMethod
 } from './components';
 
 const CompoundInterest = () => {
     const options = [
-        { value: 'compoundInterestFormula', label: '1. Формула складних відсотків' },
-        { value: 'compoundInterestFormulaPeriods', label: '2. Формула складних відсотків (різні періоди + маржа)' }
-        // { value: 'compoundInterestFormula', label: 'Номінальна ставка відсотка' },
+        { value: 'compoundInterestFormula', label: '2. Формула складних відсотків' },
+        { value: 'compoundInterestFormulaPeriods', label: '2.1. Формула складних відсотків (різні періоди + маржа)' },
+        { value: 'compoundInterestHybridMethod', label: '2.2. Змішаний метод vs Простий метод' }
         // { value: 'compoundInterestFormula', label: 'Ефективна відсоткова ставка' }
     ];
 
@@ -24,6 +25,8 @@ const CompoundInterest = () => {
                 return <CompoundInterestFormula />;
             case 'compoundInterestFormulaPeriods':
                 return <CompoundInterestFormulaPeriods />;
+            case 'compoundInterestHybridMethod':
+                return <CompoundInterestHybridMethod />;
             default:
                 return;
         }
