@@ -1,6 +1,6 @@
 import { useForm } from 'react-hook-form';
 import { Button, TextInput, FormField } from 'components/common';
-import { Periods } from './components';
+import { Periods } from '../common';
 
 import { getDatesDifference } from 'helpers';
 
