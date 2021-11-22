@@ -5,7 +5,9 @@ import {
     CompoundInterestFormulaPeriods,
     CompoundInterestHybridMethod,
     NominalInterestRate,
-    RealInterestRate
+    RealInterestRate,
+    MathematicalDiscounting,
+    BankAccounting
 } from './components';
 
 const CompoundInterest = () => {
@@ -14,7 +16,9 @@ const CompoundInterest = () => {
         { value: 'compoundInterestFormulaPeriods', label: '2. Формула складних відсотків (різні періоди + маржа)' },
         { value: 'compoundInterestHybridMethod', label: '3. Змішаний метод vs Простий метод' },
         { value: 'nominalInterestRate', label: '4. Номінальна відсоткова ставка' },
-        { value: 'realInterestRate', label: '5. Реальна відсоткова ставка' }
+        { value: 'realInterestRate', label: '5. Реальна відсоткова ставка' },
+        { value: 'mathematicalDiscounting', label: '6. Математичне дисконтування та облік за складними ставками відсотка' },
+        { value: 'bankAccounting', label: '7. Облік за складною обліковою ставкою' }
     ];
 
     const [selectedOption, setSelectedOption] = useState(options[0]);
@@ -34,6 +38,10 @@ const CompoundInterest = () => {
                 return <NominalInterestRate />;
             case 'realInterestRate':
                 return <RealInterestRate />;
+            case 'mathematicalDiscounting':
+                return <MathematicalDiscounting />;
+            case 'bankAccounting':
+                return <BankAccounting />;
             default:
                 return;
         }

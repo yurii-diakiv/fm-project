@@ -80,8 +80,8 @@ const CompoundInterestHybridMethod = () => {
                 <FormField
                     component={TextInput}
                     name='percentages'
-                    label='Відсотки'
-                    placeholder='Відсотки'
+                    label='Складні відсотки'
+                    placeholder='Складні відсотки'
                     type='text'
                     color='gray-light'
                     control={control}
