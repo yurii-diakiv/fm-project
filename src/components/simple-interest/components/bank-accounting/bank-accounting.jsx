@@ -33,6 +33,11 @@ const BankAccounting = () => {
         >
             <h2 className={styles.title}>Банківський облік</h2>
 
+            <span className={styles.textBlock}>
+                Кредит на суму 100 000 грн. виданий терміном на один рік під облікову ставку d = 15%. 
+                Знайти суму отриманих грошей і дисконт, отриманий банком.
+            </span>
+
             <div className={styles.inputBlock}>
                 <FormField
                     component={TextInput}

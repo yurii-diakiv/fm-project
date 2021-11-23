@@ -30,6 +30,12 @@ const CompoundInterestRatesProfit = () => {
         >
             <h2 className={styles.title}>Складні відсоткові ставки (прибуток)</h2>
 
+            <span className={styles.textBlock}>
+                Вартість сертифікату 1 000 грн. За умови трирічного його зберігання виплачується 1 500 грн., 
+                п'ятирічного - 2 000 грн. Визначити прибутковість вкладання коштів у сертифікат для кредитора 
+                у вигляді складної річної ставки відсотків.
+            </span>
+
             <div className={styles.inputBlock}>
                 <FormField
                     component={TextInput}

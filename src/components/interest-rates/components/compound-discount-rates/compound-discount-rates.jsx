@@ -29,6 +29,11 @@ const CompoundDiscountRates = () => {
         >
             <h2 className={styles.title}>Складні облікові ставкии</h2>
 
+            <span className={styles.textBlock}>
+                Нехай вексель виписують на 3 роки. При його обліку власник бажає отримати 75% вартості векселя. 
+                Визначити розмір складної облікової ставки для забезпечення таких умов контракту.
+            </span>
+
             <div className={styles.inputBlock}>
                 <FormField
                     component={TextInput}

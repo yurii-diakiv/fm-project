@@ -33,6 +33,12 @@ const SimpleInterstRates = () => {
         >
             <h2 className={styles.title}>Прості відсоткові ставки</h2>
 
+            <span className={styles.textBlock}>
+                Початкова сума боргу 100 000 грн. Через 150 днів передбачається погасити 120 000 грн. 
+                Визначити прибутковість операції для кредитора у простій відсотковій і обліковій ставці, 
+                якщо вважати, що поточний рік є високосним.
+            </span>
+
             <div className={styles.inputBlock}>
                 <FormField
                     component={TextInput}

@@ -37,6 +37,12 @@ const CompoundInterestRates = () => {
         >
             <h2 className={styles.title}>Складні відсоткові ставки</h2>
 
+            <span className={styles.textBlock}>
+                За який час сума на депозиті зросте з 10 000 грн до 30 000 грн. за умови, що на 
+                вкладені кошти нараховуються відсотки за ставкою 15% складних річних, а капіталізація 
+                відбувається раз на рік? Щоквартально?
+            </span>
+
             <div className={styles.inputBlock}>
                 <FormField
                     component={TextInput}

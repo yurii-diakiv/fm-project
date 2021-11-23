@@ -37,6 +37,11 @@ const BankAccountingFractionalN = () => {
         >
             <h2 className={styles.title}>Банківський облік (дробове n)</h2>
 
+            <span className={styles.textBlock}>
+                Вексель номінальною вартістю 2 500 грн. облікований у банку за 30 днів до його терміну 
+                погашення за обліковою ставкою 20%. Знайти суму отриману векселетримачем та величину дисконту.
+            </span>
+
             <div className={styles.inputBlock}>
                 <FormField
                     component={TextInput}

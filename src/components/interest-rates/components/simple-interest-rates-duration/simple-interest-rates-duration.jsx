@@ -30,6 +30,11 @@ const SimpleInterstRatesDuration = () => {
         >
             <h2 className={styles.title}>Прості відсоткові ставки (невідомий термін)</h2>
 
+            <span className={styles.textBlock}>
+                Заборгованість з 10 000 грн. зросла до 15 000 грн. Визначити тривалість позики у днях 
+                при нарахуванні 25% простих річних відсотків (рік - високосний).
+            </span>
+
             <div className={styles.inputBlock}>
                 <FormField
                     component={TextInput}
