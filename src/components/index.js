@@ -1,11 +1,11 @@
 import Header from './header/header';
-import SimplePercentages from './simple-percentages/simple-percentages';
-import AnotherParagraph from './another-paragraph/AnotherParagraph';
+import SimpleInterest from './simple-interest/simple-interest';
+import InterestRates from './interest-rates/interest-rates';
 import CompoundInterest from './commpound-interest/сompound-interest';
 
 export {
     Header,
-    SimplePercentages,
-    AnotherParagraph,
+    SimpleInterest,
+    InterestRates,
     CompoundInterest
 };

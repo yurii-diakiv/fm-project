@@ -1,5 +1,5 @@
 import { Route, Routes } from 'react-router-dom';
-import { SimplePercentages, Header, AnotherParagraph, CompoundInterest } from './components';
+import { SimpleInterest, Header, InterestRates, CompoundInterest } from './components';
 
 import styles from './index.module.scss';
 
@@ -8,11 +8,11 @@ const App = () => (
 		<Header />
 		<div className={styles.main}>
 			<Routes>
-				<Route path='/' element={<SimplePercentages />} />
-				<Route path='/simple-percentages' element={<SimplePercentages />} />
-				<Route path='/another-paragraph' element={<AnotherParagraph />} />
+				<Route path='/' element={<SimpleInterest />} />
+				<Route path='/simple-interest' element={<SimpleInterest />} />
+				<Route path='/interest-rates' element={<InterestRates />} />
 				<Route path='/compound-interest' element={<CompoundInterest />} />
-				<Route path="*" exact element={<SimplePercentages />} />
+				<Route path='*' exact element={<SimpleInterest />} />
 			</Routes>
 		</div>
 	</>
