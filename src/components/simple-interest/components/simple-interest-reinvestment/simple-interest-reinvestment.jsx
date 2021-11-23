@@ -75,6 +75,11 @@ const SimpleInterestReinvestment = () => {
         >
             <h2 className={styles.title}>Прості відсотки (з реінвестуванням)</h2>
 
+            <span className={styles.textBlock}>
+                На суму 1 000 грн. протягом місяця нараховуються прості відсотки за ставкою 10% річних. Операція 
+                повторюється впродовж першого кварталу. Знайти нарощену суму, якщо вважати, що рік високосний.
+            </span>
+
             <div className={styles.inputBlock}>
                 <FormField
                     component={TextInput}

@@ -85,6 +85,13 @@ const SimpleInterestPeriods = () => {
         >
             <h2 className={styles.title}>Прості відсотки (різні періоди)</h2>
 
+            <span className={styles.textBlock}>
+                Фінансовою угодою передбачено такі умови нарахування простих відсотків на депозит: 
+                перший квартал - 15% річних, кожний наступний квартал ставка зростає на 5%. 
+                Визначити множник нарощення та нарощену за один рік суму, якщо початковий вклад 
+                становив 10 000 грн.
+            </span>
+
             <div className={styles.inputBlock}>
                 <FormField
                     component={TextInput}

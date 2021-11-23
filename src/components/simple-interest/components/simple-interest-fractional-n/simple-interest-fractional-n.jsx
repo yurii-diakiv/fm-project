@@ -48,6 +48,11 @@ const SimpleInterestFractionalN = () => {
         >
             <h2 className={styles.title}>Прості відсотки (дробове n)</h2>
 
+            <span className={styles.textBlock}>
+                Позика в 100 000 грн. видана банком 20 січня під 25% річних. Термін повернення - 5 жовтня цього ж року. 
+                Вважаючи, що поточний рік не є високосним, підрахувати нарощену суму трьома описанимим методами.
+            </span>
+
             <div className={styles.inputBlock}>
                 <FormField
                     component={Select}

@@ -31,6 +31,11 @@ const SimpleInterest = () => {
         >
             <h2 className={styles.title}>Прості відсотки</h2>
 
+            <span className={styles.textBlock}>
+                Банк надав клієнту позику 100 000 грн. на п'ять років за ставкою 25% простих річних.
+                Визначити проценти та нарощену на кінець терміну суму.
+            </span>
+
             <div className={styles.inputBlock}>
                 <FormField
                     component={TextInput}

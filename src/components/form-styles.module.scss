@@ -18,25 +18,17 @@
 		align-self: flex-start;
 	}
 
-	.inputBlock,
-	.textBlock {
+	.inputBlock {
 		margin-top: 15px;
 		width: 100%;
 		color: #000;
 	}
 
 	.textBlock {
-		color: var(--color-gray);
-
-		& > a {
-			text-transform: capitalize;
-			text-decoration: none;
-			color: var(--color-primary-light);
-
-			&:hover {
-				color: var(--color-primary-dark);
-			}
-		}
+		width: 100%;
+		margin-left: 2.5%;
+		margin-right: 2.5%;
+		font-size: 13.5px;
 	}
 
 	.inlineBlock {

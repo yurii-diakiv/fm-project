@@ -117,6 +117,12 @@ const SimpleInterestDynamicDeposit = () => {
         >
             <h2 className={styles.title}>Прості відсотки (динамічний депозит)</h2>
 
+            <span className={styles.textBlock}>
+                Нехай рух коштів на рахунку характеризується наступними даними: 05.02 на рахунок надійшло 
+                120 000 грн., 10.07 з рахунку знято 40 000 грн. і 20.10 покладено 80 000 грн. Визначити 
+                нарощені відсотки на кінець поточного року, якщо відсоткова ставка становить 15% річних.
+            </span>
+
             <div className={styles.inputBlock}>
                 <FormField
                     component={TextInput}
