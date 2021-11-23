@@ -28,7 +28,7 @@ const ExponentialInterestRate = () => {
             onSubmit={handleSubmit(calculateExponentialInterestRate)}
             className={styles.formulaForm}
         >
-            <h2 className={styles.title}>Відсоткова ставка зростає лінійно і неперервно</h2>
+            <h2 className={styles.title}>Відсоткова ставка неперервно зростає по експоненті</h2>
 
             <div className={styles.inputBlock}>
                 <FormField

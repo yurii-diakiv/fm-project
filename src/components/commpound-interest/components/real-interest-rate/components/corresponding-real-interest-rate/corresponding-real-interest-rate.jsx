@@ -34,7 +34,7 @@ const CorrespondingRealInterestRate = () => {
             onSubmit={handleSubmit(calculateCorrespondingRealInterestRate)}
             className={styles.formulaForm}
         >
-            <h2 className={styles.title}>Множник нарощення</h2>
+            <h2 className={styles.title}>Відповідна реальна відсоткова ставка</h2>
 
             <div className={styles.inputBlock}>
                 <FormField

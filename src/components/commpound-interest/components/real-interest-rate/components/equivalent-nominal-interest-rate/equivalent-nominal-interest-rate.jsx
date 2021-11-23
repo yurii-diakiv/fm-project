@@ -28,7 +28,7 @@ const EquivalentNominalInterestRate = () => {
             onSubmit={handleSubmit(calculateEquivalentNominalInterestRate)}
             className={styles.formulaForm}
         >
-            <h2 className={styles.title}>Множник нарощення</h2>
+            <h2 className={styles.title}>Еквівалентна номінальна відсоткова ставка</h2>
 
             <div className={styles.inputBlock}>
                 <FormField
