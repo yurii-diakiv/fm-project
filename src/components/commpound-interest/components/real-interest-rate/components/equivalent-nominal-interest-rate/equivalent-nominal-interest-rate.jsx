@@ -30,6 +30,11 @@ const EquivalentNominalInterestRate = () => {
         >
             <h2 className={styles.title}>Еквівалентна номінальна відсоткова ставка</h2>
 
+            <span className={styles.textBlock}>
+                Визначити величину номінальної ставки <i>j(4)</i>, яка 
+                беззбитково заміняє ставку <i>j(12)</i> = 25%.
+            </span>
+
             <div className={styles.inputBlock}>
                 <FormField
                     component={TextInput}

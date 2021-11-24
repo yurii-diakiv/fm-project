@@ -25,7 +25,12 @@ const CompoundInterestFormulaPeriods = () => {
         let accumulator = 1;
         for (let index = 0; index < periods.length; index++) {
           const currentIterationResult = (1 + (i / 100) + (periods[index].margin / 100))**periods[index].durationInYears;
-          accumulator *= currentIterationResult.toFixed(5);
+          
+          if (index % 2 === 0) {
+            accumulator *= currentIterationResult.toFixed(4);
+          } else {
+            accumulator *= currentIterationResult.toFixed(3);
+          }
         }
 
         const S = P * accumulator;
@@ -39,6 +44,11 @@ const CompoundInterestFormulaPeriods = () => {
             className={styles.formulaForm}
         >
             <h2 className={styles.title}>Формула складних відсотків (різні періоди + маржа)</h2>
+
+            <span className={styles.textBlock}>
+                Нехай складний відсоток за позикою становить 15% річних плюс маржа 3% в перші два роки і 4% в наступні роки. 
+                Знайти величину накопиченого за шість років боргу, якщо позичальник займав 50 000 грн.
+            </span>
 
             <div className={styles.inputBlock}>
                 <FormField

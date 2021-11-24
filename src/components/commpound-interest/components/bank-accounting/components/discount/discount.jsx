@@ -4,49 +4,46 @@ import { Button, TextInput, FormField } from 'components/common';
 import styles from 'components/form-styles.module.scss';
 
 const DEFAULT_VALUES = {
-    loan: 100000,       //P
-    duration: 3,        //n
-    percentages: 20,    //i
+    sum: 100000,
+    duration: 3.5,
+    discountRate: 20,
     result: '',
-    percentagesValue: ''
+    discount: ''
 };
 
-const CompoundInterestFormula = () => {
+const Discount = () => {
     const { handleSubmit, control, setValue } = useForm({
         defaultValues: DEFAULT_VALUES,
     });
 
-    const calculateCompoundInterest = form => {
-        const { loan: P, duration: n, percentages: i } = form;
+    const calculateDiscount = form => {
+        const { sum: S, duration: n, discountRate: d } = form;
 
-        const S = P * (1 + (i / 100))**n;
-        const I = S - P;
+        const P = S * (1 - d / 100)**n;
+        const D = S - P;
 
-        // Alternative formula
-        // const I = P * ((1 + (i / 100))**n - 1);
-
-        setValue('result', S.toFixed(2));
-        setValue('percentagesValue', I.toFixed(2));
+        setValue('result', P.toFixed(2));
+        setValue('discount', D.toFixed(2));
     };
 
     return (
         <form
-            onSubmit={handleSubmit(calculateCompoundInterest)}
+            onSubmit={handleSubmit(calculateDiscount)}
             className={styles.formulaForm}
         >
-            <h2 className={styles.title}>Формула складних відсотків</h2>
+            <h2 className={styles.title}>Визначити вартість дисконту</h2>
 
             <span className={styles.textBlock}>
-                Визначити розмір заборгованості за позикою у 100 000 грн. за три роки, якщо нарощення відбувалося за
-                складною відсотковою ставкою 20% річних. Яку величину з цієї суми становлять проценти?
+                Визначити вартість дисконту від продажу фінансового інструменту на суму 100 000 грн., якщо термін погашення 
+                становить 3.5 року. При продажі застосовувалась складна облікова ставка 20% річних.
             </span>
 
             <div className={styles.inputBlock}>
                 <FormField
                     component={TextInput}
-                    name='loan'
-                    label='Позика'
-                    placeholder='Позика'
+                    name='sum'
+                    label='Сума'
+                    placeholder='Сума'
                     type='text'
                     color='gray-light'
                     control={control}
@@ -57,8 +54,8 @@ const CompoundInterestFormula = () => {
                 <FormField
                     component={TextInput}
                     name='duration'
-                    label='Термін (у роках)'
-                    placeholder='Термін (у роках)'
+                    label='Термін погашення (у роках)'
+                    placeholder='Термін погашення (у роках)'
                     type='text'
                     color='gray-light'
                     control={control}
@@ -68,9 +65,9 @@ const CompoundInterestFormula = () => {
             <div className={styles.inputBlock}>
                 <FormField
                     component={TextInput}
-                    name='percentages'
-                    label='Відсотки'
-                    placeholder='Відсотки'
+                    name='discountRate'
+                    label='Складна облікова ставка'
+                    placeholder='Складна облікова ставка'
                     type='text'
                     color='gray-light'
                     control={control}
@@ -100,9 +97,9 @@ const CompoundInterestFormula = () => {
             <div className={styles.inputBlock}>
                 <FormField
                     component={TextInput}
-                    name='percentagesValue'
-                    label='Величина процентів'
-                    placeholder='Величина процентів'
+                    name='discount'
+                    label='Величина дисконту'
+                    placeholder='Величина дисконту'
                     type='text'
                     color='gray-light'
                     control={control}
@@ -112,4 +109,4 @@ const CompoundInterestFormula = () => {
     );
 };
 
-export default CompoundInterestFormula;
+export default Discount;

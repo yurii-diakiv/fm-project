@@ -41,6 +41,12 @@ const MathematicalDiscounting = () => {
         >
             <h2 className={styles.title}>Математичне дисконтування</h2>
 
+            <span className={styles.textBlock}>
+                Визначити сучасну вартість 10 000 грн., які будуть сплачені через 3 роки 
+                при використанні ставки 30% складних річних. <br />
+                Яким буде результат, якщо до умови додати щоквартальне дисконтування?.
+            </span>
+
             <div className={styles.inputBlock}>
                 <FormField
                     component={TextInput}

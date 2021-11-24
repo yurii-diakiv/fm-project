@@ -33,6 +33,11 @@ const GrowthRate = () => {
         >
             <h2 className={styles.title}>Множник нарощення</h2>
 
+            <span className={styles.textBlock}>
+                Нехай номінальна ставка відсотка <i>j</i> = 15% річних. Відсотки нараховуються щоквартально впродовж трьох років. 
+                Визначити відповідний множник нарощення.
+            </span>
+
             <div className={styles.inputBlock}>
                 <FormField
                     component={TextInput}

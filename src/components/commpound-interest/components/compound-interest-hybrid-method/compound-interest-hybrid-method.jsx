@@ -42,6 +42,11 @@ const CompoundInterestHybridMethod = () => {
         >
             <h2 className={styles.title}>Змішаний метод vs Простий метод</h2>
 
+            <span className={styles.textBlock}>
+                Кредит у розмірі 300 000 грн. виданий на 2 роки і 155 днів під 25% складних річних відсотки. Якою буде сума боргу на 
+                кінець терміну угоди, якщо для розрахунків використовувався метод нарахування змішаний? Простий?
+            </span>
+
             <div className={styles.inputBlock}>
                 <FormField
                     component={TextInput}

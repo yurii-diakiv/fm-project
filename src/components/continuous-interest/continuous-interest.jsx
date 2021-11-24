@@ -7,8 +7,8 @@ import {
 
 const ContinuousInterest = () => {
     const options = [
-        { value: 'constantGrowthRate', label: '1. Постійна сила росту' },
-        { value: 'changeableGrowthRate', label: '2. Змінна сила росту' }
+        { value: 'constantGrowthRate', label: '28-29. Постійна сила росту' },
+        { value: 'changeableGrowthRate', label: '30-31. Змінна сила росту' }
     ];
 
     const [selectedOption, setSelectedOption] = useState(options[0]);

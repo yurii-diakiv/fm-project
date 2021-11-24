@@ -47,6 +47,11 @@ const NominalInterestRate = () => {
         >
             <h2 className={styles.title}>Номінальна відсоткова ставка</h2>
 
+            <span className={styles.textBlock}>
+                Якою буде величина заборгованості через 31 місяць, якщо на початку терміну вона становила 100 000 грн., відсотки 
+                нараховувались складні за ставкою 22% річних, нарахування відбувались поквартально.
+            </span>
+
             <div className={styles.inputBlock}>
                 <FormField
                     component={TextInput}

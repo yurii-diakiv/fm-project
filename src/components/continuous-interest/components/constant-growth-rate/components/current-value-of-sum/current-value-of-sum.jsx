@@ -4,49 +4,45 @@ import { Button, TextInput, FormField } from 'components/common';
 import styles from 'components/form-styles.module.scss';
 
 const DEFAULT_VALUES = {
-    loan: 100000,       //P
-    duration: 3,        //n
-    percentages: 20,    //i
+    debt: 200000,       
+    duration: 7,        
+    growthRate: 5,    
     result: '',
-    percentagesValue: ''
+    resultWithDiscount: ''
 };
 
-const CompoundInterestFormula = () => {
+const CurrentValueOfSum = () => {
     const { handleSubmit, control, setValue } = useForm({
         defaultValues: DEFAULT_VALUES,
     });
 
-    const calculateCompoundInterest = form => {
-        const { loan: P, duration: n, percentages: i } = form;
+    const calculateCurrentValueOfSum = form => {
+        const { debt: P, duration: n, growthRate: sigma } = form;
 
-        const S = P * (1 + (i / 100))**n;
-        const I = S - P;
-
-        // Alternative formula
-        // const I = P * ((1 + (i / 100))**n - 1);
+        const S = P * Math.E**(-(sigma / 100) * n);
 
         setValue('result', S.toFixed(2));
-        setValue('percentagesValue', I.toFixed(2));
     };
 
     return (
         <form
-            onSubmit={handleSubmit(calculateCompoundInterest)}
+            onSubmit={handleSubmit(calculateCurrentValueOfSum)}
             className={styles.formulaForm}
         >
-            <h2 className={styles.title}>Формула складних відсотків</h2>
+            <h2 className={styles.title}>Визначити сучасну вартість отриманої за борг суми</h2>
 
             <span className={styles.textBlock}>
-                Визначити розмір заборгованості за позикою у 100 000 грн. за три роки, якщо нарощення відбувалося за
-                складною відсотковою ставкою 20% річних. Яку величину з цієї суми становлять проценти?
+                Боргове зобов’язання на суму 200 000 грн., термін сплати 
+                якого настане через 7 років, продано з дисконтом за силою росту 
+                5% річних. Визначити сучасну вартість отриманої за борг суми.
             </span>
 
             <div className={styles.inputBlock}>
                 <FormField
                     component={TextInput}
-                    name='loan'
-                    label='Позика'
-                    placeholder='Позика'
+                    name='debt'
+                    label='Боргове зобов’язання'
+                    placeholder='Боргове зобов’язання'
                     type='text'
                     color='gray-light'
                     control={control}
@@ -68,9 +64,9 @@ const CompoundInterestFormula = () => {
             <div className={styles.inputBlock}>
                 <FormField
                     component={TextInput}
-                    name='percentages'
-                    label='Відсотки'
-                    placeholder='Відсотки'
+                    name='growthRate'
+                    label='Сила росту'
+                    placeholder='Сила росту'
                     type='text'
                     color='gray-light'
                     control={control}
@@ -89,20 +85,8 @@ const CompoundInterestFormula = () => {
                 <FormField
                     component={TextInput}
                     name='result'
-                    label='Результат'
-                    placeholder='Результат'
-                    type='text'
-                    color='gray-light'
-                    control={control}
-                />
-            </div>
-
-            <div className={styles.inputBlock}>
-                <FormField
-                    component={TextInput}
-                    name='percentagesValue'
-                    label='Величина процентів'
-                    placeholder='Величина процентів'
+                    label='Сучасна вартість'
+                    placeholder='Сучасна вартість'
                     type='text'
                     color='gray-light'
                     control={control}
@@ -112,4 +96,4 @@ const CompoundInterestFormula = () => {
     );
 };
 
-export default CompoundInterestFormula;
+export default CurrentValueOfSum;

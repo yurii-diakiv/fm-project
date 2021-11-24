@@ -36,6 +36,11 @@ const CorrespondingRealInterestRate = () => {
         >
             <h2 className={styles.title}>Відповідна реальна відсоткова ставка</h2>
 
+            <span className={styles.textBlock}>
+                Банк нараховує відсотки за номінальною ставкою 20% річних. Знайти відповідну ефективну річну ставку за умов 
+                щомісячної та щоденної капіталізації.
+            </span>
+
             <div className={styles.inputBlock}>
                 <FormField
                     component={TextInput}

@@ -7,8 +7,8 @@ import {
 
 const ChangeableGrowthRate = () => {
   const options = [
-      { value: 'linearInterestRate', label: 'Відсоткова ставка зростає лінійно і неперервно' },
-      { value: 'exponentialInterestRate', label: 'Відсоткова ставка неперервно зростає по експоненті' }
+      { value: 'linearInterestRate', label: '30. Відсоткова ставка зростає лінійно і неперервно' },
+      { value: 'exponentialInterestRate', label: '31. Відсоткова ставка неперервно зростає по експоненті' }
   ];
 
   const [selectedOption, setSelectedOption] = useState(options[0]);

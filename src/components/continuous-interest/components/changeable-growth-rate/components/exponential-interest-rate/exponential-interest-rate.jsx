@@ -30,6 +30,13 @@ const ExponentialInterestRate = () => {
         >
             <h2 className={styles.title}>Відсоткова ставка неперервно зростає по експоненті</h2>
 
+            <span className={styles.textBlock}>
+                Початкове значення сили росту становить 5%. Відсоткова 
+                ставка неперервно зростає по експоненті, з приростом 10% за 
+                рік. Нарощення відбувається впродовж 5 років. Визначити 
+                відповідний множник нарощення. 
+            </span>
+
             <div className={styles.inputBlock}>
                 <FormField
                     component={TextInput}

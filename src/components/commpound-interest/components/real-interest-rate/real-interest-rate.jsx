@@ -8,9 +8,9 @@ import {
 
 const RealInterestRate = () => {
   const options = [
-      { value: 'growthRate', label: 'Визначити множник нарощення' },
-      { value: 'correspondingRealInterestRate', label: 'Знайти реальну номінальну ставку відповідну до заданої номінальної ставки' },
-      { value: 'equivalentNominalInterestRate', label: 'Визначити величину номінальної ставки яка беззбитково заміняє іншу ставку' }
+      { value: 'growthRate', label: '14. Визначити множник нарощення' },
+      { value: 'correspondingRealInterestRate', label: '15. Знайти реальну номінальну ставку відповідну до заданої номінальної ставки' },
+      { value: 'equivalentNominalInterestRate', label: '16. Визначити величину номінальної ставки яка беззбитково заміняє іншу ставку' }
   ];
 
   const [selectedOption, setSelectedOption] = useState(options[0]);

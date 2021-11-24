@@ -4,57 +4,43 @@ import { Button, TextInput, FormField } from 'components/common';
 import styles from 'components/form-styles.module.scss';
 
 const DEFAULT_VALUES = {
-    initialGrowthRate: 3,
-    percentages: 3,
-    duration: 7,        
-    result: ''
+    sum: 50000,
+    duration: 5,
+    discountRate: 17,
+    debtAmount: ''
 };
 
-const LinearInterestRate = () => {
+const Debt = () => {
     const { handleSubmit, control, setValue } = useForm({
         defaultValues: DEFAULT_VALUES,
     });
 
-    const calculateLinearInterestRate = form => {
-        const { initialGrowthRate: sigma, percentages: a, duration: n } = form;
+    const calculateDebt = form => {
+        const { sum: P, duration: n, discountRate: d } = form;
 
-        const result = Math.E**((sigma / 100) * 7 + ((a / 100) * n**2 / 2));
+        const debtAmount = P / ((1 - d / 100)**n).toFixed(6);
 
-        setValue('result', result.toFixed(3));
+        setValue('debtAmount', debtAmount.toFixed(2));
     };
 
     return (
         <form
-            onSubmit={handleSubmit(calculateLinearInterestRate)}
+            onSubmit={handleSubmit(calculateDebt)}
             className={styles.formulaForm}
         >
-            <h2 className={styles.title}>Відсоткова ставка зростає лінійно і неперервно</h2>
+            <h2 className={styles.title}>Знайти нарощену суму боргу</h2>
 
             <span className={styles.textBlock}>
-                Нехай початкове значення сили росту становить 3%. 
-                Відсоткова ставка зростає лінійно і неперервно, з приростом 3% 
-                за рік. Нарощення відбувається впродовж 7 років. Визначити 
-                відповідний множник нарощення. 
+                Використовуючи складну річну облікову ставку 17%, знайти нарощену суму боргу, 
+                якщо початкова сума 50 000 грн., термін погашення 5 років.
             </span>
 
             <div className={styles.inputBlock}>
                 <FormField
                     component={TextInput}
-                    name='initialGrowthRate'
-                    label='Початкове значення сили росту'
-                    placeholder='Початкове значення сили росту'
-                    type='text'
-                    color='gray-light'
-                    control={control}
-                />
-            </div>
-
-            <div className={styles.inputBlock}>
-                <FormField
-                    component={TextInput}
-                    name='percentages'
-                    label='Відсоткова ставка'
-                    placeholder='Відсоткова ставка'
+                    name='sum'
+                    label='Сума'
+                    placeholder='Сума'
                     type='text'
                     color='gray-light'
                     control={control}
@@ -65,8 +51,20 @@ const LinearInterestRate = () => {
                 <FormField
                     component={TextInput}
                     name='duration'
-                    label='Термін (у роках)'
-                    placeholder='Термін (у роках)'
+                    label='Термін погашення (у роках)'
+                    placeholder='Термін погашення (у роках)'
+                    type='text'
+                    color='gray-light'
+                    control={control}
+                />
+            </div>
+
+            <div className={styles.inputBlock}>
+                <FormField
+                    component={TextInput}
+                    name='discountRate'
+                    label='Складна облікова ставка'
+                    placeholder='Складна облікова ставка'
                     type='text'
                     color='gray-light'
                     control={control}
@@ -84,9 +82,9 @@ const LinearInterestRate = () => {
             <div className={styles.inputBlock}>
                 <FormField
                     component={TextInput}
-                    name='result'
-                    label='Множник нарощення'
-                    placeholder='Множник нарощення'
+                    name='debtAmount'
+                    label='Нарощена сума боргу'
+                    placeholder='Нарощена сума боргу'
                     type='text'
                     color='gray-light'
                     control={control}
@@ -96,4 +94,4 @@ const LinearInterestRate = () => {
     );
 };
 
-export default LinearInterestRate;
+export default Debt;
