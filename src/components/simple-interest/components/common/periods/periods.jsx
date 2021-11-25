@@ -29,7 +29,7 @@ const Periods = ({ control, name, emptyPeriod, period: Period }) => {
                             label={<FontAwesomeIcon icon={faTrashAlt} />}
                             type='button'
                             color='red'
-                            onClick={index => remove(index)}
+                            onClick={() => remove(index)}
                         />
                     </div>
                 </div>
